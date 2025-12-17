@@ -8,12 +8,15 @@
 
   <style>
     :root {
-      --bg: #0b1120;
-      --bg-soft: #111827;
-      --text-main: #e5e7eb;
-      --text-muted: #9ca3af;
-      --accent: #38bdf8;
-      --card: #020617;
+      --bg-dark: #000000;
+      --bg-navy: #0a0e1a;
+      --bg-card: #0f1421;
+      --text-white: #ffffff;
+      --text-gray: #a0a8b8;
+      --text-muted: #6b7280;
+      --accent-blue: #3b82f6;
+      --accent-cyan: #06b6d4;
+      --border: rgba(255, 255, 255, 0.08);
     }
 
     * {
@@ -23,139 +26,310 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: radial-gradient(circle at top, #0f172a, #020617);
-      color: var(--text-main);
-      line-height: 1.6;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-navy) 50%, var(--bg-dark) 100%);
+      color: var(--text-white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Background gradient overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 10%, rgba(59, 130, 246, 0.15), transparent 40%),
+                  radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.12), transparent 40%);
+      pointer-events: none;
+      z-index: 0;
     }
 
     a {
-      color: var(--accent);
+      color: var(--accent-blue);
       text-decoration: none;
+      transition: all 0.3s ease;
     }
 
-    .container {
-      max-width: 1100px;
+    /* NAVIGATION */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 14, 26, 0.7);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 80px 20px;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.5px;
+    }
+
+    /* MAIN CONTAINER */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 140px 40px 80px;
+      position: relative;
+      z-index: 1;
     }
 
     /* HERO */
     .hero {
-      min-height: 70vh;
+      min-height: 75vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding: 60px 0;
     }
 
     .badge {
-      display: inline-block;
-      background: rgba(56, 189, 248, 0.12);
-      color: var(--accent);
-      padding: 6px 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(6, 182, 212, 0.1));
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: var(--accent-blue);
+      padding: 8px 18px;
       border-radius: 999px;
       font-size: 14px;
-      margin-bottom: 20px;
+      font-weight: 500;
+      margin-bottom: 32px;
       width: fit-content;
+      letter-spacing: 0.3px;
+    }
+
+    .badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--accent-blue);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
     }
 
     h1 {
-      font-size: clamp(36px, 6vw, 64px);
-      font-weight: 700;
-      margin-bottom: 16px;
+      font-size: clamp(48px, 7vw, 84px);
+      font-weight: 800;
+      margin-bottom: 24px;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      background: linear-gradient(135deg, var(--text-white) 0%, var(--text-gray) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .hero p {
-      font-size: 18px;
-      color: var(--text-muted);
-      max-width: 700px;
-      margin-bottom: 24px;
+      font-size: 20px;
+      color: var(--text-gray);
+      max-width: 680px;
+      margin-bottom: 40px;
+      line-height: 1.8;
     }
 
     .cta {
       display: inline-block;
-      padding: 14px 28px;
-      border-radius: 8px;
-      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-      color: #020617;
+      padding: 16px 36px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+      color: var(--text-white);
       font-weight: 600;
+      font-size: 16px;
       width: fit-content;
-      transition: transform 0.2s ease;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .cta:hover::before {
+      left: 100%;
     }
 
     .cta:hover {
       transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(59, 130, 246, 0.4);
     }
 
     /* SECTIONS */
     section {
-      margin-top: 80px;
+      margin-top: 140px;
     }
 
     section h2 {
-      font-size: 32px;
-      margin-bottom: 16px;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
     }
 
-    section p {
-      color: var(--text-muted);
+    section > p {
+      color: var(--text-gray);
       max-width: 720px;
-      margin-bottom: 32px;
+      margin-bottom: 56px;
+      font-size: 18px;
     }
 
     /* CARDS */
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
     }
 
     .card {
-      background: linear-gradient(180deg, var(--bg-soft), var(--card));
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      padding: 28px;
-      border-radius: 14px;
-      transition: transform 0.2s ease, border 0.2s ease;
+      background: linear-gradient(135deg, var(--bg-card), rgba(15, 20, 33, 0.4));
+      border: 1px solid var(--border);
+      padding: 40px 32px;
+      border-radius: 20px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover::before {
+      transform: scaleX(1);
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(56, 189, 248, 0.4);
+      transform: translateY(-8px);
+      border-color: rgba(59, 130, 246, 0.4);
+      box-shadow: 0 20px 60px rgba(59, 130, 246, 0.15);
     }
 
     .card h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
+      font-size: 22px;
+      margin-bottom: 14px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
     }
 
     .card p {
-      font-size: 15px;
+      font-size: 16px;
+      color: var(--text-gray);
       margin: 0;
+      line-height: 1.7;
     }
 
     /* FOOTER */
     footer {
-      margin-top: 120px;
-      padding-top: 32px;
-      border-top: 1px solid rgba(255,255,255,0.06);
+      margin-top: 160px;
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
       color: var(--text-muted);
       font-size: 14px;
       display: flex;
-      flex-direction: column;
-      gap: 8px;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
     }
 
-    @media (max-width: 600px) {
-      .container {
-        padding: 60px 16px;
+    footer span:first-child {
+      color: var(--text-gray);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-container {
+        padding: 16px 24px;
       }
+
+      .logo {
+        font-size: 20px;
+      }
+
+      .container {
+        padding: 100px 24px 60px;
+      }
+
+      .hero {
+        min-height: 60vh;
+      }
+
       section {
-        margin-top: 64px;
+        margin-top: 100px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      footer {
+        margin-top: 120px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 80px 20px 40px;
+      }
+
+      .card {
+        padding: 32px 24px;
       }
     }
   </style>
 </head>
 <body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">HyperNova</div>
+    </div>
+  </nav>
 
   <div class="container">
 
@@ -165,7 +339,7 @@
       <h1>HyperNova</h1>
       <p>
         We help SMBs and startups eliminate repetitive manual work by building
-        reliable automation systems that scale with the business.
+        reliable automation systems that scale with your business.
       </p>
       <a href="https://www.linkedin.com/in/zulfiqarsyed27/" class="cta">
         Get in touch
@@ -183,24 +357,24 @@
       <div class="cards">
         <div class="card">
           <h3>Workflow automation</h3>
-          <p>Automate internal processes across operations, sales, and support.</p>
+          <p>Automate internal processes across operations, sales, and support to eliminate manual bottlenecks.</p>
         </div>
 
         <div class="card">
           <h3>Internal tools & integrations</h3>
-          <p>Build custom tools and integrate APIs to remove manual handoffs.</p>
+          <p>Build custom tools and integrate APIs to remove manual handoffs and streamline data flow.</p>
         </div>
 
         <div class="card">
           <h3>Process optimization</h3>
-          <p>Redesign workflows to reduce errors and increase throughput.</p>
+          <p>Redesign workflows to reduce errors, increase throughput, and scale operations efficiently.</p>
         </div>
       </div>
     </section>
 
     <!-- WHO IT'S FOR -->
     <section>
-      <h2>Who it’s for</h2>
+      <h2>Who it's for</h2>
       <p>
         HyperNova works with lean teams that want to move fast without adding
         operational complexity.
@@ -209,17 +383,17 @@
       <div class="cards">
         <div class="card">
           <h3>SMBs</h3>
-          <p>Businesses looking to streamline operations and reduce costs.</p>
+          <p>Businesses looking to streamline operations, reduce costs, and maximize team productivity.</p>
         </div>
 
         <div class="card">
           <h3>Startups</h3>
-          <p>Early-stage teams building scalable foundations.</p>
+          <p>Early-stage teams building scalable foundations without burning resources on manual work.</p>
         </div>
 
         <div class="card">
           <h3>Founders</h3>
-          <p>Operators who want systems, not spreadsheets.</p>
+          <p>Operators who want systems that work, not spreadsheets that break under pressure.</p>
         </div>
       </div>
     </section>
@@ -227,7 +401,7 @@
     <!-- FOOTER -->
     <footer>
       <span>Based in India • Working with global clients</span>
-      <span>© HyperNova</span>
+      <span>© 2024 HyperNova</span>
     </footer>
 
   </div>
