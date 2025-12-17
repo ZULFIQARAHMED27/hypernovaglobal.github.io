@@ -2,66 +2,235 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>HyperNova</title>
+  <title>HyperNova | Automation Solutions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HyperNova builds automation solutions for SMBs and startups to eliminate manual work and scale faster." />
+
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
+    :root {
+      --bg: #0b1120;
+      --bg-soft: #111827;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --accent: #38bdf8;
+      --card: #020617;
     }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(circle at top, #0f172a, #020617);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
     .container {
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 80px 20px;
     }
+
+    /* HERO */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 20px;
+      width: fit-content;
+    }
+
     h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 700;
+      margin-bottom: 20px;
     }
-    p {
+
+    .hero p {
       font-size: 18px;
-      line-height: 1.6;
-      color: #cbd5f5;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin-bottom: 30px;
     }
-    .section {
-      margin-top: 40px;
+
+    .cta {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: #020617;
+      font-weight: 600;
+      width: fit-content;
+      transition: transform 0.2s ease;
     }
-    ul {
-      list-style: none;
-      padding: 0;
+
+    .cta:hover {
+      transform: translateY(-2px);
     }
-    li {
+
+    /* SECTIONS */
+    section {
+      margin-top: 120px;
+    }
+
+    section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      color: var(--text-muted);
+      max-width: 720px;
+      margin-bottom: 40px;
+    }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--bg-soft), var(--card));
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 28px;
+      border-radius: 14px;
+      transition: transform 0.2s ease, border 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+
+    .card h3 {
+      font-size: 20px;
       margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 15px;
+      margin: 0;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 140px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      color: var(--text-muted);
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 60px 16px;
+      }
+      section {
+        margin-top: 80px;
+      }
     }
   </style>
 </head>
 <body>
+
   <div class="container">
-    <h1>HyperNova</h1>
-    <p><strong>Automation solutions for SMBs & startups.</strong></p>
 
-    <div class="section">
+    <!-- HERO -->
+    <div class="hero">
+      <span class="badge">Automation for growing teams</span>
+      <h1>HyperNova</h1>
       <p>
-        We help teams eliminate repetitive manual work by building simple,
-        reliable automation systems that save time and reduce errors.
+        We help SMBs and startups eliminate repetitive manual work by building
+        reliable automation systems that scale with the business.
       </p>
+      <a href="https://www.linkedin.com/in/zulfiqarsyed27/" class="cta">
+        Get in touch
+      </a>
     </div>
 
-    <div class="section">
+    <!-- WHAT WE DO -->
+    <section>
       <h2>What we do</h2>
-      <ul>
-        <li>• Workflow automation</li>
-        <li>• Internal tools & integrations</li>
-        <li>• Process optimization</li>
-      </ul>
-    </div>
+      <p>
+        We design and implement automation systems that improve speed,
+        accuracy, and operational efficiency across teams.
+      </p>
 
-    <div class="section">
-      <h2>Contact</h2>
-      <p>Reach out via LinkedIn.</p>
-    </div>
+      <div class="cards">
+        <div class="card">
+          <h3>Workflow automation</h3>
+          <p>Automate internal processes across operations, sales, and support.</p>
+        </div>
+
+        <div class="card">
+          <h3>Internal tools & integrations</h3>
+          <p>Build custom tools and integrate APIs to remove manual handoffs.</p>
+        </div>
+
+        <div class="card">
+          <h3>Process optimization</h3>
+          <p>Redesign workflows to reduce errors and increase throughput.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO IT'S FOR -->
+    <section>
+      <h2>Who it’s for</h2>
+      <p>
+        HyperNova works with lean teams that want to move fast without adding
+        operational complexity.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>SMBs</h3>
+          <p>Businesses looking to streamline operations and reduce costs.</p>
+        </div>
+
+        <div class="card">
+          <h3>Startups</h3>
+          <p>Early-stage teams building scalable foundations.</p>
+        </div>
+
+        <div class="card">
+          <h3>Founders</h3>
+          <p>Operators who want systems, not spreadsheets.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <span>Based in India • Working with global clients</span>
+      <span>© HyperNova</span>
+    </footer>
+
   </div>
+
 </body>
 </html>
