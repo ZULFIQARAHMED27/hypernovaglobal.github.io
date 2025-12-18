@@ -163,6 +163,7 @@ nav {
 
 .badge::before {
   content: '';
+  display: block;   
   width: 6px;
   height: 6px;
   background: var(--accent-blue);
