@@ -509,6 +509,29 @@ footer span:first-child {
   align-items: center;
 }
 
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 700;
+  opacity: 0.9;
+  color: var(--text-white);
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    display: none;
+  }
+}
+
+
+
 /* Ensure nav links always stay right */
 .nav-links {
   margin-left: auto;
