@@ -214,43 +214,51 @@ h1 {
 }
 
 /* CTA */
-/* CTA BUTTON – ORIGINAL SHIMMER EFFECT */
+/* CTA BUTTON – FIXED SHIMMER (VISIBLE GUARANTEED) */
 
 .cta {
+  position: relative;
   display: inline-block;
   padding: 16px 36px;
   border-radius: 12px;
   background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
-  color: var(--text-white);
+  color: #ffffff;
   font-weight: 600;
   font-size: 16px;
-  width: fit-content;
-  position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
   box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
 }
 
-/* White shimmer layer */
+/* SHIMMER LAYER */
 .cta::before {
   content: '';
   position: absolute;
   top: 0;
-  left: -100%;
-  width: 100%;
+  left: -120%;
+  width: 120%;
   height: 100%;
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.45),
     transparent
   );
-  transition: left 0.5s ease;
+  z-index: 2;           
+  transition: left 0.55s ease;
 }
 
-/* Hover animation */
+/* TEXT ABOVE SHIMMER */
+.cta span,
+.cta {
+  position: relative;
+  z-index: 3;
+}
+
+/* HOVER */
 .cta:hover::before {
-  left: 100%;
+  left: 120%;
 }
 
 .cta:hover {
