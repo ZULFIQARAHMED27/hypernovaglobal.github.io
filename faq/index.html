@@ -5,24 +5,28 @@
   <title>FAQ | HyperNova</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/assets/style.css">
+  <style>
+    /* Reduce spacing for this page specifically */
+    .container h1 {
+      margin-bottom: 16px;
+    }
+    
+    .container > p {
+      margin-bottom: 40px;
+    }
+    
+    .container section {
+      margin-top: 0;
+    }
+  </style>
 </head>
-
-  <script>
-  function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("show");
-  }
-</script>
-
 <body>
-
 <nav>
   <div class="nav-container">
     <div class="logo">
       <img src="/assets/logo.jpeg" alt="HyperNova Logo" />
     </div>
-
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
     <div class="nav-links" id="navLinks">
       <a href="/">Home</a>
       <a href="/why-hypernova/">Why HyperNova</a>
@@ -33,11 +37,8 @@
     </div>
   </div>
 </nav>
-
-
 <div class="container">
   <h1>Frequently Asked Questions</h1>
-
   <section>
     <div class="cards">
       <div class="card">
@@ -60,6 +61,5 @@
     document.getElementById("navLinks").classList.toggle("show");
   }
 </script>
-
 </body>
 </html>
