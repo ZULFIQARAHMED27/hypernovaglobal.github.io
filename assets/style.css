@@ -400,8 +400,11 @@ section {
 }
 
 .cta-footer {
-  margin-top: 160px;
+  margin-top: 120px;   /* space from cards */
+  margin-bottom: 0;
+  text-align: center;
 }
+
 
 /* ===============================
    FOOTER ALIGNMENT FIX
