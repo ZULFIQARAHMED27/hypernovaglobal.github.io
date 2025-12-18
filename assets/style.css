@@ -293,3 +293,73 @@ section > p {
     padding: 100px 20px 40px;
   }
 }
+
+/* ===============================
+   HERO + CTA STABILITY FIX
+   =============================== */
+
+/* Fix badge width */
+.badge {
+  display: inline-flex !important;
+  width: fit-content !important;
+  max-width: max-content;
+}
+
+/* Fix primary CTA width */
+.cta {
+  display: inline-block !important;
+  width: fit-content !important;
+  max-width: max-content;
+}
+
+/* ===============================
+   CARD HOVER STRIPE FIX
+   =============================== */
+
+.card {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+/* ===============================
+   BOTTOM CTA CENTER FIX
+   =============================== */
+
+.cta-footer {
+  text-align: center !important;
+}
+
+.cta-footer .cta {
+  margin: 0 auto;
+}
+
+/* ===============================
+   FOOTER ALIGNMENT FIX
+   =============================== */
+
+.site-footer,
+.footer-content,
+.footer-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  text-align: center !important;
+}
+
