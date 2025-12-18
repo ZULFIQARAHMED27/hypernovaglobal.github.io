@@ -355,3 +355,8 @@ footer span:first-child {
   }
 }
 
+/* Fix spacing on Contact page */
+.container p {
+  margin-bottom: 32px;
+}
+
