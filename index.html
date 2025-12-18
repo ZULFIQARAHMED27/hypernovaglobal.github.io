@@ -8,115 +8,88 @@
   <link rel="stylesheet" href="/assets/style.css">
 </head>
 
-  <script>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="/assets/logo.jpeg" alt="HyperNova Logo" />
+    </div>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="/">Home</a>
+      <a href="/why-hypernova/">Why HyperNova</a>
+      <a href="/services/">Services</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <span class="badge">Automation for growing teams</span>
+    <h1>HyperNova</h1>
+    <p>
+      We help SMBs and startups eliminate repetitive manual work by building
+      reliable automation systems that scale with your business.
+    </p>
+    <a href="/contact/" class="cta">Get in touch</a>
+  </div>
+
+  <!-- WHAT WE DO -->
+  <section>
+    <h2>What we do</h2>
+    <p>
+      We design and implement automation systems that improve speed,
+      accuracy, and operational efficiency across teams.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Workflow automation</h3>
+        <p>Automate internal processes across operations, sales, and support.</p>
+      </div>
+
+      <div class="card">
+        <h3>Internal tools & integrations</h3>
+        <p>Custom tools and API integrations to remove manual handoffs.</p>
+      </div>
+
+      <div class="card">
+        <h3>Process optimization</h3>
+        <p>Redesign workflows to reduce errors and scale efficiently.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        Based in India • Serving clients worldwide
+        <br>
+        <a href="mailto:hello@hypernovaglobal.com" class="footer-email">
+          Contact: hello@hypernovaglobal.com
+        </a>
+      </div>
+      <div>© 2025 HyperNova</div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
   function toggleMenu() {
     document.getElementById("navLinks").classList.toggle("show");
   }
 </script>
 
-<body>
-
-  <!-- NAVIGATION -->
-  <nav>
-  <div class="nav-container">
-    <div class="logo">
-      <img src="/assets/logo.jpeg" alt="HyperNova Logo" />
-    </div>
-    
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-<div class="nav-links" id="navLinks">
-  <a href="/">Home</a>
-  <a href="/why-hypernova/">Why HyperNova</a>
-  <a href="/services/">Services</a>
-  <a href="/pricing/">Pricing</a>
-  <a href="/faq/">FAQ</a>
-  <a href="/contact/">Contact</a>
-</div>
-
-  </div>
-</nav>
-
-  <div class="container">
-
-    <!-- HERO -->
-    <div class="hero">
-      <span class="badge">Automation for growing teams</span>
-      <h1>HyperNova</h1>
-      <p>
-        We help SMBs and startups eliminate repetitive manual work by building
-        reliable automation systems that scale with your business.
-      </p>
-      <a href="https://www.linkedin.com/in/zulfiqarsyed27/" class="cta">
-        Get in touch
-      </a>
-    </div>
-
-    <!-- WHAT WE DO -->
-    <section>
-      <h2>What we do</h2>
-      <p>
-        We design and implement automation systems that improve speed,
-        accuracy, and operational efficiency across teams.
-      </p>
-
-      <div class="cards">
-        <div class="card">
-          <h3>Workflow automation</h3>
-          <p>Automate internal processes across operations, sales, and support to eliminate manual bottlenecks.</p>
-        </div>
-
-        <div class="card">
-          <h3>Internal tools & integrations</h3>
-          <p>Build custom tools and integrate APIs to remove manual handoffs and streamline data flow.</p>
-        </div>
-
-        <div class="card">
-          <h3>Process optimization</h3>
-          <p>Redesign workflows to reduce errors, increase throughput, and scale operations efficiently.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHO IT'S FOR -->
-    <section>
-      <h2>Who it's for</h2>
-      <p>
-        HyperNova works with lean teams that want to move fast without adding
-        operational complexity.
-      </p>
-
-      <div class="cards">
-        <div class="card">
-          <h3>SMBs</h3>
-          <p>Businesses looking to streamline operations, reduce costs, and maximize team productivity.</p>
-        </div>
-
-        <div class="card">
-          <h3>Startups</h3>
-          <p>Early-stage teams building scalable foundations without burning resources on manual work.</p>
-        </div>
-
-        <div class="card">
-          <h3>Founders</h3>
-          <p>Operators who want systems that work, not spreadsheets that break under pressure.</p>
-        </div>
-      </div>
-    </section>
-
- <footer class="site-footer">
-  <div class="footer-content">
-    <span>
-      Based in India • Serving clients worldwide
-      <br>
-      <a href="mailto:hello@hypernovaglobal.com" class="footer-email">
-        Contact: hello@hypernovaglobal.com
-      </a>
-    </span>
-    <span>© 2025 HyperNova</span>
-  </div>
-</footer>
-
-
-
-
+</body>
+</html>
