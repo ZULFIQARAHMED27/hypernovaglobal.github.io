@@ -396,3 +396,19 @@ footer span:first-child {
   }
 }
 
+/* Footer email emphasis */
+.footer-email {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-gray);
+}
+
+.footer-email:hover {
+  color: var(--text-white);
+}
+
+footer span {
+  font-size: 14px;
+}
