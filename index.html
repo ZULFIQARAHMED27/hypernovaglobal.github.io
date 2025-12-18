@@ -68,7 +68,7 @@
     .nav-container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 20px 40px;
+      padding: 16px 40px;
       display: flex;
       align-items: center;
     }
@@ -83,6 +83,40 @@
       width: auto;
       object-fit: contain;
     }
+
+    .nav-links {
+  margin-left: auto;              /* pushes links to the right */
+  display: flex;
+  align-items: center;
+  gap: 28px;                      /* spacing between menu items */
+}
+
+.nav-links a {
+  color: var(--text-gray);
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: var(--text-white);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
 
     /* MAIN CONTAINER */
     .container {
