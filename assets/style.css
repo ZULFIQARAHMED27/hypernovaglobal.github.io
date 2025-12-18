@@ -531,6 +531,15 @@ footer span:first-child {
   }
 }
 
+/* FORCE LOGO TEXT COLOR + WEIGHT */
+.logo-link .logo-text {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff !important;
+  letter-spacing: -0.4px;
+  white-space: nowrap;
+}
+
 
 
 /* Ensure nav links always stay right */
