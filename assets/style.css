@@ -516,12 +516,13 @@ footer span:first-child {
 }
 
 .logo-text {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 800;
   opacity: 0.9;
-  color: var(--text-white);
-  letter-spacing: -0.3px;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: -0.4px;
   white-space: nowrap;
+  text-transform: none;
 }
 
 @media (max-width: 480px) {
