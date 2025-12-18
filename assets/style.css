@@ -360,3 +360,39 @@ footer span:first-child {
   margin-bottom: 32px;
 }
 
+/* MOBILE NAVIGATION */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: #ffffff;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 24px;
+    background: rgba(10, 14, 26, 0.95);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+    width: 200px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
