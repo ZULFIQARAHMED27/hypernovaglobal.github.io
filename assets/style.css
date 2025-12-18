@@ -285,6 +285,11 @@ section > p {
   font-size: 18px;
 }
 
+section {
+  margin-top: 140px;
+  margin-bottom: 80px;
+}
+
 /* CARDS */
 .cards {
   display: grid;
@@ -414,6 +419,10 @@ section > p {
 
 .cta-footer .cta {
   margin: 0 auto;
+}
+
+.cta-footer {
+  margin-top: 160px;
 }
 
 /* ===============================
