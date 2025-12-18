@@ -496,3 +496,20 @@ footer span:first-child {
   margin-top: 6px;
 }
 
+/* ===== LOGO CLICK FIX (KEEP NAV RIGHT) ===== */
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+}
+
+/* Ensure nav links always stay right */
+.nav-links {
+  margin-left: auto;
+}
