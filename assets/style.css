@@ -438,33 +438,35 @@ footer span:first-child {
 }
 
 /* ===== MOBILE NAV ===== */
+/* Hamburger button */
 .menu-toggle {
   display: none;
+  font-size: 24px;
   background: none;
   border: none;
-  font-size: 28px;
   color: white;
   cursor: pointer;
 }
 
+/* Mobile nav */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
+    margin-left: auto;
   }
 
   .nav-links {
+    display: none;
     position: absolute;
     top: 70px;
-    right: 20px;
-    background: rgba(10, 14, 26, 0.95);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--border);
+    right: 24px;
+    background: rgba(10, 14, 26, 0.98);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 12px;
+    padding: 16px;
     flex-direction: column;
-    gap: 16px;
-    padding: 20px;
-    display: none;
-    z-index: 1001;
+    gap: 14px;
+    z-index: 999;
   }
 
   .nav-links.show {
