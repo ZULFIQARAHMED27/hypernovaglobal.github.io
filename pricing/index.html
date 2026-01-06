@@ -75,6 +75,18 @@
   border-radius: 999px;
   margin-bottom: 10px;
 }
+
+    .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.card-header h3 {
+  margin: 0;
+}
+
   </style>
 </head>
 <body>
@@ -113,8 +125,10 @@
         </ul>
       </div>
       <div class="card popular">
-  <span class="badge">Most Popular</span>
-  <h3>Growth</h3>
+  <div class="card-header">
+    <h3>Growth</h3>
+    <span class="badge">Most Popular</span>
+  </div>
         <div class="price">$2,500 – $4,000</div>
         <div class="description">Scale automation across teams with connected workflows and AI</div>
         <ul>
