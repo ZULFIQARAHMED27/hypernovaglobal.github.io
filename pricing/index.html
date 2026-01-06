@@ -60,6 +60,21 @@
       color: var(--accent-cyan);
       font-weight: 700;
     }
+
+    .card.popular {
+  border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+.card .badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-blue);
+  border: 1px solid var(--accent-blue);
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
   </style>
 </head>
 <body>
@@ -97,8 +112,9 @@
           <li>2-week delivery</li>
         </ul>
       </div>
-      <div class="card">
-        <h3>Growth</h3>
+      <div class="card popular">
+  <span class="badge">Most Popular</span>
+  <h3>Growth</h3>
         <div class="price">$2,500 – $4,000</div>
         <div class="description">Scale automation across teams with connected workflows and AI</div>
         <ul>
@@ -110,6 +126,7 @@
       <div class="card">
         <h3>Enterprise</h3>
         <div class="price">Custom</div>
+        <div class="enterprise-note">Starting from $7,500</div>
         <div class="description">Transform operations company-wide</div>
         <ul>
           <li>End-to-end automation systems</li>
