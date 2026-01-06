@@ -77,6 +77,7 @@
   line-height: 1;
   position: relative;
   top: 2px;
+  animation: none !important;
 }
 
  .card-header {
@@ -88,6 +89,33 @@
 
 .card-header h3 {
   margin: 0;
+}
+
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-blue);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+  position: relative;
+  top: -1px;
+  animation: pulse 1.6s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.4);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
   </style>
@@ -130,7 +158,10 @@
       <div class="card popular">
   <div class="card-header">
     <h3>Growth</h3>
-    <span class="badge">Most Popular</span>
+    <span class="badge">
+  <span class="pulse-dot"></span>
+  Most Popular
+</span>
   </div>
         <div class="price">$2,500 – $4,000</div>
         <div class="description">Scale automation across teams with connected workflows and AI</div>
