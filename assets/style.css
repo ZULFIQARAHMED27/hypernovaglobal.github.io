@@ -372,7 +372,7 @@ section > p {
   }
 
   .logo-text {
-    display: none;
+    display: block;
   }
   
   /* FIX: Reduce mobile spacing */
